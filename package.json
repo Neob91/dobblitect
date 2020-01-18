@@ -1,0 +1,40 @@
+{
+  "devDependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "name": "dobblitect",
+  "description": "",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "emotion": "^10.0.27",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.5"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config ./webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neob91/dobblitect.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neob91/dobblitect/issues"
+  },
+  "homepage": "https://github.com/Neob91/dobblitect#readme"
+}
