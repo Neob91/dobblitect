@@ -1,9 +1,9 @@
 export interface IDobbleCardSymbol {
   symbolId: string;
-  leftOffset: number;
-  rightOffset: number;
-  size: number;
-  rotation: number;
+  leftOffsetFactor: number;
+  topOffsetFactor: number;
+  sizeFactor: number;
+  rotationFactor: number;
 }
 
 export interface IDobbleCard {
@@ -14,4 +14,6 @@ export interface IDobbleCard {
 export interface ICardsState {
   items: { [id: string]: IDobbleCard };
   ids: string[];
+  selectedCardId: string;
+  selectedSymbolId: string;
 }

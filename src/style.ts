@@ -5,4 +5,15 @@ export const globalStyle = css`
     margin: 0;
     padding: 0;
   }
+
+  @media print {
+    #app {
+      display: none;
+    }
+  }
+
+  @page {
+    margin: 0;
+    size: A4;
+  }
 `;

@@ -1,10 +1,11 @@
 export interface IDobbleSymbol {
   id: string;
-  image: string;
+  url: string;
+  width: number;
+  height: number;
 }
 
 export interface ISymbolsState {
-  activeCount: number;
   items: { [id: string]: IDobbleSymbol };
   ids: string[];
 }
