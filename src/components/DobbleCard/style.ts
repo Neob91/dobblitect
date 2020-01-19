@@ -1,6 +1,8 @@
 import { css } from 'emotion';
 
 export const dobbleCardStyle = theme => css`
+  position: relative;
+
   width: ${theme.cardSize}mm;
   height: ${theme.cardSize}mm;
   border-radius: 50%;

@@ -1,25 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { DobbleCardSymbol } from '@/components';
 import { IStoreState } from '@/store';
 import { IDobbleCardSymbol } from '@/store/cards';
 import { IThemeState } from '@/store/theme';
 import { dobbleCardStyle } from './style';
+
+interface IOwnProps {
+  id: string;
+}
 
 interface IStateProps {
   symbols: IDobbleCardSymbol[];
   theme: IThemeState;
 }
 
-interface IOwnProps {
-  id: string;
-}
-
-interface IProps extends IStateProps, IOwnProps {}
+interface IProps extends IOwnProps, IStateProps {}
 
 const PDobbleCard: React.FC<IProps> = ({ symbols, theme }) => {
   return (
     <div className={dobbleCardStyle(theme)}>
+      {/*symbols.map(s => <DobbleCardSymbol {...s} />)*/}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 export interface IDobbleCardSymbol {
   symbolId: string;
-  offsetX: number;
-  offsetY: number;
+  leftOffset: number;
+  rightOffset: number;
   size: number;
   rotation: number;
 }

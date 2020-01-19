@@ -1,9 +1,6 @@
 import { css } from 'emotion';
 
-export const dobbleContainerStyle = css`
-  display: flex;
-  flex-direction: column;
-`;
+export const dobbleContainerStyle = css``;
 
 export const dobblePageStyle = css`
   display: flex;
@@ -13,10 +10,10 @@ export const dobblePageStyle = css`
   break-after: page;
 
   width: 210mm;
-  height: 297mm;
+  height: 290mm;
   padding: 10mm;
 
-  border: 2px solid black;
+  border: 2px solid #ccc;
 `;
 
 export const dobbleRowStyle = css`
