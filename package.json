@@ -16,7 +16,6 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "dependencies": {
-    "@emotion/core": "^10.0.27",
     "emotion": "^10.0.27",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

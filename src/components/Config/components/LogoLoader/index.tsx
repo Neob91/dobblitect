@@ -5,21 +5,21 @@ import { IStoreState } from '@/store';
 import { IThemeState, addLogo } from '@/store/theme';
 import { IImage, readSingleImage } from '@/utils/images';
 
-interface IStateProps {
+interface StateProps {
   theme: IThemeState;
 }
 
-interface IDispatchProps {
+interface DispatchProps {
   onAddLogo: (image: IImage) => void;
 }
 
-interface IOwnProps {
+interface OwnProps {
   dpi: number;
 }
 
-interface IProps extends IStateProps, IDispatchProps, IOwnProps {}
+interface Props extends StateProps, DispatchProps, OwnProps {}
 
-export const PDobbleLogoSelect: React.FC<IProps> = ({ dpi, theme, onAddLogo }) => {
+export const PLogoLoader: React.FC<Props> = ({ dpi, theme, onAddLogo }) => {
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const maxSize = theme.cardSize*(dpi/25.4);
     onAddLogo(await readSingleImage(e.target.files[0], maxSize));
@@ -32,7 +32,7 @@ export const PDobbleLogoSelect: React.FC<IProps> = ({ dpi, theme, onAddLogo }) =
   );
 };
 
-const mapState = (state: IStoreState): IStateProps => ({
+const mapState = (state: IStoreState): StateProps => ({
   theme: state.theme
 });
 
@@ -40,4 +40,4 @@ const mapDispatch = dispatch => ({
   onAddLogo: (image: IImage) => dispatch(addLogo({ image }))
 });
 
-export const DobbleLogoSelect = connect(mapState, mapDispatch)(PDobbleLogoSelect);
+export const LogoLoader = connect(mapState, mapDispatch)(PLogoLoader);
