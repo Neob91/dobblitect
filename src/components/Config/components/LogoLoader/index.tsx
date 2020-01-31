@@ -27,7 +27,7 @@ export const PLogoLoader: React.FC<Props> = ({ dpi, theme, onAddLogo }) => {
 
   return (
     <div>
-      <input type="file" onChange={handleChange} multiple />
+      <input type="file" onChange={handleChange} />
     </div>
   );
 };

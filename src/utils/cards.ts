@@ -1,4 +1,6 @@
+import { generate, getCardSymbolCount } from 'dobble';
 import uuid4 from 'uuid/v4';
+
 import { IDobbleCardSymbol } from '@/store/cards';
 
 export const cardSymbolPositions = [
@@ -19,44 +21,14 @@ export const cardSymbolPositions = [
 ];
 
 export const generateCards = (symbolIds: string[]) => {
-  const n = getSymbolsOnCard(symbolIds.length);
-  const deck = [];
-
-  for (let i = 0; i < n; i++) {
-    const symbols = [
-      generateSymbol(symbolIds[0], 0)
-    ];
-
-    for (let j = 1; j < n; j++) {
-      symbols.push(generateSymbol(symbolIds[(n - 1) * i + j], j));
-    }
-
-    deck.push({
+  const n = getCardSymbolCount(symbolIds.length);
+  return generate(n)
+    .map(symbols => ({
       id: uuid4(),
-      symbols
-    });
-  }
-
-  for (let i = 1; i < n; i++) {
-    for (let j = 1; j < n; j++) {
-      const symbols = [
-        generateSymbol(symbolIds[i], 0)
-      ];
-
-      for (let k = 1; k < n; k++) {
-        symbols.push(
-          generateSymbol(symbolIds[n + (n - 1) * (k - 1) + ( ((i - 1) * (k - 1) + (j - 1)) ) % (n - 1)], k)
-        );
-      }
-
-      deck.push({
-        id: uuid4(),
-        symbols
-      });
-    }
-  }
-
-  return deck;
+      symbols: symbols.map((s, idx) =>
+        generateSymbol(symbolIds[s], idx)
+      )
+    }));
 }
 
 const generateSymbol = (id, index): IDobbleCardSymbol => {
@@ -68,14 +40,4 @@ const generateSymbol = (id, index): IDobbleCardSymbol => {
     sizeFactor: Math.pow(Math.random(), 4), // 0 - minimum, 1 - maximum
     rotationFactor: Math.random() // 0 - 1
   };
-};
-
-const getSymbolsOnCard = (totalSymbolCount: number) => {
-  for (let i = 0; i < totalSymbolCount; i++) {
-    if ((i - 1) * (i - 1) + i > totalSymbolCount) {
-      return i - 1;
-    }
-  }
-
-  return 1;
 };
