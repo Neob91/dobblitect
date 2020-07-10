@@ -9,14 +9,14 @@
     "typescript": "^3.7.4",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
+    "webpack-dev-server": "^3.11.0"
   },
   "name": "dobblitect",
   "description": "",
   "version": "1.0.0",
   "main": "webpack.config.js",
   "dependencies": {
-    "dobble": "^1.0.2",
+    "dobble": "^1.1.1",
     "emotion": "^10.0.27",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
